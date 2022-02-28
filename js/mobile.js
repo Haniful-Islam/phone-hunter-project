@@ -13,20 +13,31 @@ const displayMobileResult = mobiles => {
     // console.log(mobiles);
     const searchResult = document.getElementById('search-result');
     for (const mobile of mobiles) {
-        console.log(mobile);
+        console.log(mobile.id);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100">
+        <div onclick="loadMobileDetails('${mobile.slug}')" class="card h-100">
                 <img height="350px" src="${mobile.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h3 class="card-title">${mobile.brand}</h3>
                 <h4 class="card-title">${mobile.phone_name}</h4>
-                <p class="card-text"></p>
                 </div>
             </div>
-        `
+        `;
         searchResult.appendChild(div);
-
     }
+}
+
+const loadMobileDetails = mobileId => {
+    // console.log(mobileId);
+    const url = `https://openapi.programming-hero.com/api/phone/${mobileId}`;
+    // console.log(url);
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displaySingleMobileDetails(data.data));
+}
+
+const displaySingleMobileDetails = mobile => {
+    console.log(mobile);
 }
