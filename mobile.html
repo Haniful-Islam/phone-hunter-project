@@ -13,15 +13,30 @@
     <link rel="stylesheet" href="css/mobile.css">
 </head>
 
-<body>
+<body class="">
 
-
+    <h1 class="text-center my-4">Mobile Market</h1>
 
     <!-- search button  -->
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    <div class="input-group mb-3 w-50 mx-auto">
+        <input id="input-field" type="text" class="form-control" placeholder="Search your likes mobile phone"
+            aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="searchMobile()" class="btn btn-outline-secondary" type="button"
+            id="button-addon2">Search</button>
+    </div>
+
+    <!--==============mobile search result============== -->
+    <div id="search-result" class="row row-cols-1 row-cols-md-3 row-cols-sm-1 g-4 w-75 mx-auto">
+        <!-- <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div> -->
     </div>
 
 
