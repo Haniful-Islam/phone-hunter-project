@@ -4,6 +4,7 @@ const searchPhone = () => {
     // console.log(searchValue);
     // clear data
     searchText.value = '';
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`
     fetch(url)
         .then(response => response.json())
@@ -58,6 +59,7 @@ const singleDisplayDetails = phone => {
                 <p>Storage: ${phone.mainFeatures.storage}</p> 
                 <p>DisplaySize: ${phone.mainFeatures.displaySize}</p>                
                 <p>Chipset: ${phone.mainFeatures.chipSet}</p>  
+                <p>Sensors: ${phone.mainFeatures.sensors}</p>  
                 <h4>OthersFeatures:</h4>  
                 <p>Chipset: ${phone.others.WLAN}</p>                           
                 <p>Chipset: ${phone.others.Bluetooth}</p>                           
