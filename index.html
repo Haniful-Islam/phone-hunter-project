@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <h1 class="text-center my-4"><span class="color">M</span>obile <span class="color">M</span>arket</h1>
+    <h1 class="text-center fw-bold my-4"><span class="color">M</span>obile <span class="color">M</span>arket</h1>
+    <h2 class="text-center ">Search Your Dream Phone</h2>
     <!--========= error handle============= -->
     <div>
         <h5 class=" w-50 mx-auto" id="erro-message"></h5>
@@ -24,9 +25,17 @@
     <div class="input-group mb-3 w-50 mx-auto">
         <input id="input-field" type="text" class="form-control" placeholder="Search your likes mobile phone"
             aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button onclick="searchPhone()" class="btn  btn-outline-info text-black" type="button"
+        <button onclick="searchPhone()" class="btn btn-outline-info text-black" type="button"
             id="button-addon2">Search</button>
 
+    </div>
+    <!-- displayErrorMessage -->
+    <div>
+        <h5 class="margin-left" id="display-error"></h5>
+    </div>
+    <!--=========== spinner=========== -->
+    <div id="spinner" class="spinner">
+        <img src="img/spinner.gif" alt="">
     </div>
 
     <!-- ========single display details ========-->

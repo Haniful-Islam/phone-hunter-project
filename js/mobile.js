@@ -1,14 +1,18 @@
+const toggolerSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
 const searchPhone = () => {
     const searchText = document.getElementById('input-field');
     const searchValue = searchText.value;
-
+    toggolerSpinner('block')
     // clear data
     searchText.value = '';
     // errorMessage
     if (searchValue == '') {
         const errorMessage = document.getElementById('erro-message');
         errorMessage.style.color = "red";
-        errorMessage.innerText = 'Please write some to display!!!'
+        errorMessage.innerText = 'Please write something to display!!!'
+        // alert('Please write something to display!!!');
     }
     else {
         // load data
@@ -23,6 +27,16 @@ const displayPhoneResult = phones => {
     // console.log(phones)
     const searchResult = document.getElementById('search-result')
     searchResult.textContent = "";
+    // displayError
+    if (phones.length == 0) {
+        const displyError = document.getElementById('display-error')
+        displyError.style.color = 'red';
+        displyError.innerText = "Show no result found!"
+    }
+    else {
+        const displyError = document.getElementById('display-error')
+        displyError.style.display = 'none';
+    }
     for (const phone of phones.slice(0, 20)) {
         // console.log(phone);
         const div = document.createElement('div');
@@ -39,6 +53,7 @@ const displayPhoneResult = phones => {
             </div>
         `;
         searchResult.appendChild(div);
+        toggolerSpinner('none');
 
     }
 }
@@ -51,8 +66,10 @@ const loadPhoneDetails = phoneId => {
 }
 
 const singleDisplayDetails = phone => {
-    console.log(phone);
+
+    // console.log(phone);
     const phoneDetails = document.getElementById('phone-details');
+    phoneDetails.textContent = "";
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
@@ -69,13 +86,17 @@ const singleDisplayDetails = phone => {
                 <p> <span class="fw-bold">Sensors:</span> ${phone.mainFeatures.sensors}</p>  
 
                 <h4 class="text-info">OthersFeatures:</h4>  
-                <p><span class="fw-bold">WLAN:</span> ${phone.others.WLAN}</p>                           
-                <p><span class="fw-bold">Bluetooth:</span> ${phone.others.Bluetooth}</p>                           
+                <p><span class="fw-bold">WLAN:</span> ${phone.others?.WLAN ? phone.others?.WLAN : "Not available"}</p>                           
+                <p><span class="fw-bold">Bluetooth:</span> ${phone.others?.Bluetooth ? phone.others?.Bluetooth : "Not available"}</p>                            
+                <p><span class="fw-bold">NFC:</span> ${phone.others?.NFC ? phone.others?.NFC : "Not available"}</p>                           
+                <p><span class="fw-bold">USB:</span> ${phone.others?.USB ? phone.others?.USB : "Not available"}</p>                           
+                <p><span class="fw-bold">Radio:</span> ${phone.others?.Radio ? phone.others?.Radio : "Not available"}</p>                           
                    
-                <p><span class="fw-bold">GPS:</span>${phone.others.GPS}</p>                        
+                <p><span class="fw-bold">GPS:</span>${phone.others?.GPS ? phone.others?.GPS : "Not available"}</p>                        
             </div >
         </div >
 
     `;
     phoneDetails.appendChild(div);
+
 }

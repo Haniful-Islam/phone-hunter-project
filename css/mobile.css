@@ -9,13 +9,44 @@ body{
 h1{
     color:rgba(0, 81, 255, 0.699);
 }
+h2{
+    color:rgb(165, 127, 255);
+}
 .color{
     color:rgba(132, 0, 255, 0.753);
     font-size:52px
     
 }
-
+/*=============== single phone details========= */
 .single-phone-details{
     width:500px;
     margin:0 auto;
+}
+/*================ spinner============ */
+.spinner{
+    text-align: center;
+    display: none;
+    
+}
+.spinner img{
+    width:60px;
+    height:60px;
+
+}
+/*============== display error============= */
+.margin-left{
+    margin-left:385px;
+}
+/* ============Media Queries========= */
+@media (max-width: 688px){
+    .single-phone-details{
+        width:350px;
+        margin:0 auto;
+    }
+    h1{
+        font-size:28px;
+    }
+    h2{
+        font-size:22px;
+    }
 }
