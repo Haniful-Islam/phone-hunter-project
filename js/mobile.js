@@ -1,3 +1,4 @@
+// toggle spinner
 const toggolerSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
