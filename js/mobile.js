@@ -38,11 +38,9 @@ const displayPhoneResult = phones => {
         const displyError = document.getElementById('display-error')
         displyError.style.display = 'none';
     }
-    for (const phone of phones.slice(0, 20)) {
-        // console.log(phone);
+    phones.slice(0, 20).forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
-
         div.innerHTML = `
             <div class="card h-100 p-4">
                 <img  src="${phone.image}" class="card-img-top" alt="...">
@@ -55,8 +53,7 @@ const displayPhoneResult = phones => {
         `;
         searchResult.appendChild(div);
         toggolerSpinner('none');
-
-    }
+    })
 }
 const loadPhoneDetails = phoneId => {
     console.log(phoneId);
