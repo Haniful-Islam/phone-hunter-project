@@ -47,8 +47,8 @@ const displayPhoneResult = phones => {
             <div class="card h-100 p-4">
                 <img  src="${phone.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h3 class="card-title">${phone.brand}</h3>
-                <h4 class="card-title">${phone.phone_name}</h4>
+                <h3 class="card-title">${phone.phone_name}</h3>
+                <h4 class="card-title">${phone.brand}</h4>
                 </div>
                 <a  onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-outline-info">See Details</a>
             </div>

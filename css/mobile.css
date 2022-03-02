@@ -33,9 +33,10 @@ h2{
     height:60px;
 
 }
-/*============== display error============= */
-.margin-left{
-    margin-left:385px;
+/* search result */
+#search-result{
+    max-width:1250px;
+    margin: 0 auto;
 }
 /* ============Media Queries========= */
 @media (max-width: 688px){
